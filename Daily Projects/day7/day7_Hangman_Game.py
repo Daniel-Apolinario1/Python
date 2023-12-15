@@ -15,7 +15,7 @@ lives = 6
 guesses = []
 
 
-# The Actual Game
+# The Game
 print(hangman_images.logo)
 for characters in range(word_length):  # Defines the number of underscores to print
     display.append("_")
