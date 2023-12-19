@@ -8,29 +8,46 @@ shift = int(input("Type the shift number:\n"))
 new_alphabet = alphabet * 2
 
 
-def encrypt(plain_text, shift_amount):
-    encrypted_message = " "
-    for letter in plain_text:
-        if letter != " ":
-            index_to_print = alphabet.index(letter) + shift_amount
-            encrypted_message += new_alphabet[index_to_print]
+def ceasar(start_text, shift_amount, cipher_direction):
+    end_text = ""
+    if cipher_direction == "decode":
+        shift_amount *= -1
+    for char in start_text:
+        if char in alphabet:
+            position = alphabet.index(char)
+            new_position = position + shift_amount
+            end_text += alphabet[new_position]
         else:
-            encrypted_message += " "
-    print(f"Your encrypted message is: {encrypted_message}.")
+            end_text += char
+    print(f"The {cipher_direction}d text is {end_text}")
 
 
-def decrypt(plain_text, shift_amount):
-    encrypted_message = " "
-    for letter in plain_text:
-        if letter != " ":
-            index_to_print = alphabet.index(letter) - shift_amount
-            encrypted_message += new_alphabet[index_to_print]
-        else:
-            encrypted_message += " "
-    print(f"Your encrypted message is: {encrypted_message}.")
+ceasar(start_text=text, shift_amount=shift, cipher_direction=direction)
 
 
-if direction == "encode":
-    encrypt(plain_text=text, shift_amount=shift)
-elif direction == "decode":
-    decrypt(plain_text=text, shift_amount=shift)
+# def encrypt(plain_text, shift_amount):
+#     encrypted_message = " "
+#     for letter in plain_text:
+#         if letter != " ":
+#             index_to_print = alphabet.index(letter) + shift_amount
+#             encrypted_message += new_alphabet[index_to_print]
+#         else:
+#             encrypted_message += " "
+#     print(f"Your encrypted message is: {encrypted_message}.")
+
+
+# def decrypt(plain_text, shift_amount):
+#     encrypted_message = " "
+#     for letter in plain_text:
+#         if letter != " ":
+#             index_to_print = alphabet.index(letter) - shift_amount
+#             encrypted_message += new_alphabet[index_to_print]
+#         else:
+#             encrypted_message += " "
+#     print(f"Your encrypted message is: {encrypted_message}.")
+
+
+# if direction == "encode":
+#     encrypt(plain_text=text, shift_amount=shift)
+# elif direction == "decode":
+#     decrypt(plain_text=text, shift_amount=shift)
