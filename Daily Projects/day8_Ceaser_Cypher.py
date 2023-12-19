@@ -23,31 +23,3 @@ def ceasar(start_text, shift_amount, cipher_direction):
 
 
 ceasar(start_text=text, shift_amount=shift, cipher_direction=direction)
-
-
-# def encrypt(plain_text, shift_amount):
-#     encrypted_message = " "
-#     for letter in plain_text:
-#         if letter != " ":
-#             index_to_print = alphabet.index(letter) + shift_amount
-#             encrypted_message += new_alphabet[index_to_print]
-#         else:
-#             encrypted_message += " "
-#     print(f"Your encrypted message is: {encrypted_message}.")
-
-
-# def decrypt(plain_text, shift_amount):
-#     encrypted_message = " "
-#     for letter in plain_text:
-#         if letter != " ":
-#             index_to_print = alphabet.index(letter) - shift_amount
-#             encrypted_message += new_alphabet[index_to_print]
-#         else:
-#             encrypted_message += " "
-#     print(f"Your encrypted message is: {encrypted_message}.")
-
-
-# if direction == "encode":
-#     encrypt(plain_text=text, shift_amount=shift)
-# elif direction == "decode":
-#     decrypt(plain_text=text, shift_amount=shift)
